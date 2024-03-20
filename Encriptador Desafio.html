@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de Texto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f3f3f3;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Bienvenidos al Encriptador de Texto</h2>
+        <label for="text">Ingrese el texto:</label>
+        <input type="text" id="text">
+        <label for="option">Seleccione una opción:</label>
+        <select id="option">
+            <option value="encrypt">Encriptar</option>
+            <option value="decrypt">Desencriptar</option>
+        </select>
+        <button onclick="processText()">Procesar</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function processText() {
+            const text = document.getElementById('text').value.toLowerCase();
+            const option = document.getElementById('option').value;
+            let result = '';
+            if (option === 'encrypt') {
+                result = encrypt(text);
+            } else {
+                result = decrypt(text);
+            }
+            document.getElementById('result').innerText = result;
+        }
+
+        function encrypt(text) {
+            return text.replace(/e/g, 'enter')
+                       .replace(/i/g, 'imes')
+                       .replace(/a/g, 'ai')
+                       .replace(/o/g, 'ober')
+                       .replace(/u/g, 'ufat');
+        }
+
+        function decrypt(text) {
+            return text.replace(/enter/g, 'e')
+                       .replace(/imes/g, 'i')
+                       .replace(/ai/g, 'a')
+                       .replace(/ober/g, 'o')
+                       .replace(/ufat/g, 'u');
+        }
+    </script>
+</body>
+</html>
