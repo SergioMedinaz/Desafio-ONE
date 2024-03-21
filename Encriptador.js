@@ -1,3 +1,4 @@
+console.log ("Ejecutando sistema")
 function processText() {
     const text = document.getElementById('text').value.toLowerCase();
     const option = document.getElementById('option').value;
